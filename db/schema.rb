@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 2021_11_15_100013) do
     t.decimal "rushing_yards_per_game"
     t.integer "rushing_touchdowns"
     t.integer "rushing_long"
-    t.boolean "rushing_long_touchdown_occured"
+    t.boolean "rushing_long_touchdown_occurred"
     t.integer "rushing_1st_downs"
     t.decimal "rushing_1st_down_percentage"
     t.integer "rushing_20_yards_plus_plays"
