@@ -8,6 +8,20 @@
   <thead>
     <tr>
       <th>Name</th>
+      <th>Team</th>
+      <th>Pos</th>
+      <th>Att</th>
+      <th>Att/G</th>
+      <th>Yds</th>
+      <th>Avg</th>
+      <th>Yds/G</th>
+      <th>TD</th>
+      <th>Lng</th>
+      <th>1st</th>
+      <th>1st%</th>
+      <th>20+</th>
+      <th>40+</th>
+      <th>FUM</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,6 +30,21 @@
     <% @players.each do |player| %>
       <tr>
         <td><%= player.name %></td>
+        <td><%= player.team %></td>
+        <td><%= player.position %></td>
+        <td><%= player.rushing_attempts %></td>
+        <td><%= player.rushing_attempts_per_game %></td>
+        <td><%= player.rushing_yards %></td>
+        <td><%= player.rushing_avg %></td>
+        <td><%= player.rushing_yards_per_game %></td>
+        <td><%= player.rushing_touchdowns %></td>
+        <td><%= player.rushing_long %><%= player.rushing_long_touchdown_occurred ? "T" : "" %></td>
+        <td><%= player.rushing_1st_downs %></td>
+        <td><%= player.rushing_1st_down_percentage %></td>
+        <td><%= player.rushing_20_yards_plus_plays %></td>
+        <td><%= player.rushing_40_yards_plus_plays %></td>
+        <td><%= player.fumbles %></td>
+
         <td><%= link_to 'Show', player %></td>
         <td><%= link_to 'Edit', edit_player_path(player) %></td>
         <td><%= link_to 'Destroy', player, method: :delete, data: { confirm: 'Are you sure?' } %></td>
