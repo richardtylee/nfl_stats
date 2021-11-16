@@ -33,14 +33,14 @@
         <td><%= player.team %></td>
         <td><%= player.position %></td>
         <td><%= player.rushing_attempts %></td>
-        <td><%= player.rushing_attempts_per_game %></td>
+        <td><%= player.rushing_attempts_per_game.round(1) %></td>
         <td><%= player.rushing_yards %></td>
-        <td><%= player.rushing_avg %></td>
-        <td><%= player.rushing_yards_per_game %></td>
+        <td><%= player.rushing_avg.round(1) %></td>
+        <td><%= player.rushing_yards_per_game.round(1) %></td>
         <td><%= player.rushing_touchdowns %></td>
         <td><%= player.rushing_long %><%= player.rushing_long_touchdown_occurred ? "T" : "" %></td>
         <td><%= player.rushing_1st_downs %></td>
-        <td><%= player.rushing_1st_down_percentage %></td>
+        <td><%= player.rushing_1st_down_percentage.round(1) %></td>
         <td><%= player.rushing_20_yards_plus_plays %></td>
         <td><%= player.rushing_40_yards_plus_plays %></td>
         <td><%= player.fumbles %></td>
