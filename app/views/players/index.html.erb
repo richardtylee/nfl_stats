@@ -2,6 +2,9 @@
 
 <h1>Players</h1>
 
+<%= link_to 'Export', url_for(format: :csv, page: params[:page], page_size: params[:page_size], sort_by: params[:sort_by]) %>
+
+
 <%= will_paginate @posts %>
 
 <table>
