@@ -10,6 +10,12 @@ class PlayersController < ApplicationController
       order += " desc"
     end
     @players = Player.order(order).paginate(page: params[:page], per_page: params[:page_size])
+
+    respond_to do |format|
+      format.html
+      format.json
+      format.csv { send_data @players.to_csv, filename: "players-#{Date.today}.csv" }
+    end
   end
 
   # GET /players/1 or /players/1.json
