@@ -6,6 +6,8 @@ class PlayersController < ApplicationController
     order = params[:sort_by]
     if(!["rushing_yards", "rushing_long", "rushing_touchdowns"].include?(order))
       order = "id"
+    else
+      order += " desc"
     end
     @players = Player.order(order).paginate(page: params[:page], per_page: params[:page_size])
   end
