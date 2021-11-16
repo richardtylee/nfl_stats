@@ -3,8 +3,11 @@ class PlayersController < ApplicationController
 
   # GET /players or /players.json
   def index
-    @players = Player.paginate(page: params[:page], per_page: 10)
-
+    order = params[:sort_by]
+    if(!["rushing_yards", "rushing_long", "rushing_touchdowns"].include?(order))
+      order = "id"
+    end
+    @players = Player.order(order).paginate(page: params[:page], per_page: params[:page_size])
   end
 
   # GET /players/1 or /players/1.json
