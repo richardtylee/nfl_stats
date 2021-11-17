@@ -9,7 +9,7 @@ class PlayersController < ApplicationController
     else
       order += " desc"
     end
-    @players = Player.order(order).paginate(page: params[:page], per_page: params[:page_size])
+    @players = Player.search_by_name(params[:name_search]).order(order).paginate(page: params[:page], per_page: params[:page_size])
 
     respond_to do |format|
       format.html

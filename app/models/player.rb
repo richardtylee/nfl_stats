@@ -9,4 +9,12 @@ class Player < ApplicationRecord
       end
     end
   end
+
+  def self.search_by_name(name)
+    if name
+      where("name LIKE ?", "%#{name}%")
+    else
+      all
+    end
+  end
 end

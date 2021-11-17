@@ -4,6 +4,12 @@
 
 <%= link_to 'Export', url_for(format: :csv, page: params[:page], page_size: params[:page_size], sort_by: params[:sort_by]) %>
 
+<%= form_tag players_path, :method => "get" do %>
+  <p>
+    <%= text_field_tag :name_search, params[:name_search] %>
+    <%= submit_tag "Search", :name => nil %>
+  </p>
+<% end %>
 
 <%= will_paginate @posts %>
 
