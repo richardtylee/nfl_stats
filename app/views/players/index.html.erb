@@ -15,9 +15,10 @@
   </div>
 
   <div class="col-2">
-    <%= link_to 'Export to CSV',
+    <%= link_to "Export to CSV",
       url_for(
         format: :csv,
+        name_search: params[:name_search],
         page: params[:page],
         page_size: params[:page_size],
         sort_by: params[:sort_by]
@@ -40,11 +41,38 @@
         <th>Pos</th>
         <th>Att</th>
         <th>Att/G</th>
-        <th><a href="/players?sort_by=rushing_yards">Yds</a></th>
+        <th>
+          <%= link_to "Yds",
+            url_for(
+              name_search: params[:name_search],
+              page: params[:page],
+              page_size: params[:page_size],
+              sort_by: "rushing_yards"
+            )
+          %>
+        </th>
         <th>Avg</th>
         <th>Yds/G</th>
-        <th><a href="/players?sort_by=rushing_touchdowns">TD</a></th>
-        <th><a href="/players?sort_by=rushing_long">Lng</a></th>
+        <th>
+          <%= link_to "TD",
+            url_for(
+              name_search: params[:name_search],
+              page: params[:page],
+              page_size: params[:page_size],
+              sort_by: "rushing_touchdowns"
+            )
+          %>
+        </th>
+        <th>
+          <%= link_to "Lng",
+            url_for(
+              name_search: params[:name_search],
+              page: params[:page],
+              page_size: params[:page_size],
+              sort_by: "rushing_long"
+            )
+          %>
+        </th>
         <th>1st</th>
         <th>1st%</th>
         <th>20+</th>
