@@ -49,7 +49,7 @@ Each column is sorted in descending, with category leaders displayed at the top.
 
 To filter by player name, the user can type in a string in the Search field.  This is driven by the `name_search` parmater.
 
-![alt text](/screenshots/name-search.png)
+![Name Search](/screenshots/name-search.png)
 
 Example:
 * http://localhost:3000/players?name_search=Aaron
@@ -57,6 +57,8 @@ Example:
 #### 4. The user should be able to download the sorted data as a CSV, as well as a filtered subset
 
 To download data to a CSV, click on the Export to CSV button.  It will download the data as currently displayed on the page.
+
+![Export Button](/screenshots/export-button.png)
 
 The CSV export is driven by the `players.csv` route.  For example:
 * http://localhost:3000/players.csv?name_search=Smith&sort_by=rushing_long
@@ -66,6 +68,7 @@ The CSV export is driven by the `players.csv` route.  For example:
 To handle potentially larger sets of data, I implemented pagination using [will_paginate](will_paginate).  The current page and page size are driven by the `page` and `page_size` parameters.  Example:
 * http://localhost:3000/players?page=3&page_size=5
 
+![Pagination](/screenshots/pagination.png)
 
 ## Installation and running this solution
 
