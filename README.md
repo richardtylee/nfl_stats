@@ -34,6 +34,8 @@ To save time, I'm using [Bootstrap 5](https://getbootstrap.com/docs/5.0/getting-
 
 The contents of the [`rushing.json`](/db/rushing.json)can be found on the main players page: http://localhost:3000/players
 
+![Players Page](/screenshots/players-page.png)
+
 #### 2. The user should be able to sort the players by _Total Rushing Yards_, _Longest Rush_ and _Total Rushing Touchdowns_
 
 The Yds, TD and Lng columns are sortable by clicking on the column headers.  This is driven by the `sort_by` parameter.
