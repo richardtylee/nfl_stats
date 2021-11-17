@@ -88,7 +88,7 @@ Install JavaScript dependencies:
 yarn install
 ```
 
-Database setup (including data seeding):
+Database setup (including [data seeding](/db/seeds.rb)):
 ```
 rails db:reset
 ```
