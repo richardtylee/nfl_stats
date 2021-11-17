@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>NflStats</title>
+    <title>theScore | NFL Stats</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -11,6 +11,13 @@
   </head>
 
   <body>
+    <nav class="navbar navbar-dark bg-dark">
+      <div class="container-fluid">
+        <div class="thescore-logo-div">
+          <img src="/thescore-logo.svg" alt="theScore" width="220" height="48" class="align-text-top">
+        </div>
+      </div>
+    </nav>
     <%= yield %>
   </body>
 </html>

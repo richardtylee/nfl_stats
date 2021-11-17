@@ -13,3 +13,10 @@
  *= require_tree .
  *= require_self
  */
+
+.thescore-logo-div {
+  width: 220px;
+  height: 22px;
+  overflow: hidden;
+  display: block;
+}
