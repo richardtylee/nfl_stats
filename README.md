@@ -40,6 +40,8 @@ The contents of the [`rushing.json`](/db/rushing.json)can be found on the main p
 
 The Yds, TD and Lng columns are sortable by clicking on the column headers.  This is driven by the `sort_by` parameter.
 
+![Sortable Columns](/screenshots/sortable-columns.png)
+
 For testing convenience:
 * http://localhost:3000/players?sort_by=rushing_yards
 * http://localhost:3000/players?sort_by=rushing_touchdowns
