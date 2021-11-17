@@ -1,71 +1,89 @@
 <div class="container">
 
-<p id="notice"><%= notice %></p>
+<div class="row">
+  <p id="notice"><%= notice %></p>
+</div>
 
-<h1>Players</h1>
-
-<%= link_to 'Export', url_for(format: :csv, page: params[:page], page_size: params[:page_size], sort_by: params[:sort_by]) %>
-
-<%= form_tag players_path, :method => "get" do %>
-  <p>
-    <%= text_field_tag :name_search, params[:name_search] %>
-    <%= submit_tag "Search", :name => nil %>
-  </p>
-<% end %>
-
-<%= will_paginate @posts %>
-
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Team</th>
-      <th>Pos</th>
-      <th>Att</th>
-      <th>Att/G</th>
-      <th><a href="/players?sort_by=rushing_yards">Yds</a></th>
-      <th>Avg</th>
-      <th>Yds/G</th>
-      <th><a href="/players?sort_by=rushing_touchdowns">TD</a></th>
-      <th><a href="/players?sort_by=rushing_long">Lng</a></th>
-      <th>1st</th>
-      <th>1st%</th>
-      <th>20+</th>
-      <th>40+</th>
-      <th>FUM</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @players.each do |player| %>
-      <tr>
-        <td><%= player.name %></td>
-        <td><%= player.team %></td>
-        <td><%= player.position %></td>
-        <td><%= player.rushing_attempts %></td>
-        <td><%= player.rushing_attempts_per_game.round(1) %></td>
-        <td><%= player.rushing_yards %></td>
-        <td><%= player.rushing_avg.round(1) %></td>
-        <td><%= player.rushing_yards_per_game.round(1) %></td>
-        <td><%= player.rushing_touchdowns %></td>
-        <td><%= player.rushing_long %><%= player.rushing_long_touchdown_occurred ? "T" : "" %></td>
-        <td><%= player.rushing_1st_downs %></td>
-        <td><%= player.rushing_1st_down_percentage.round(1) %></td>
-        <td><%= player.rushing_20_yards_plus_plays %></td>
-        <td><%= player.rushing_40_yards_plus_plays %></td>
-        <td><%= player.fumbles %></td>
-
-        <td><%= link_to 'Show', player %></td>
-        <td><%= link_to 'Edit', edit_player_path(player) %></td>
-        <td><%= link_to 'Destroy', player, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+<div class="row">
+  <div class="col-10">
+    <%= form_tag players_path, :method => "get" do %>
+      <p>
+        <%= text_field_tag :name_search, params[:name_search] %>
+        <%= submit_tag "Search", :name => nil %>
+      </p>
     <% end %>
-  </tbody>
-</table>
+  </div>
 
-<br>
+  <div class="col-2">
+    <%= link_to 'Export to CSV',
+      url_for(
+        format: :csv,
+        page: params[:page],
+        page_size: params[:page_size],
+        sort_by: params[:sort_by]
+      ),
+      class: "btn btn-success"
+    %>
+  </div>
+</div>
 
-<%= link_to 'New Player', new_player_path %>
+<div class="row">
+  <%= will_paginate @players %>
+</div>
+
+<div class="row">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Team</th>
+        <th>Pos</th>
+        <th>Att</th>
+        <th>Att/G</th>
+        <th><a href="/players?sort_by=rushing_yards">Yds</a></th>
+        <th>Avg</th>
+        <th>Yds/G</th>
+        <th><a href="/players?sort_by=rushing_touchdowns">TD</a></th>
+        <th><a href="/players?sort_by=rushing_long">Lng</a></th>
+        <th>1st</th>
+        <th>1st%</th>
+        <th>20+</th>
+        <th>40+</th>
+        <th>FUM</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @players.each do |player| %>
+        <tr>
+          <td><%= player.name %></td>
+          <td><%= player.team %></td>
+          <td><%= player.position %></td>
+          <td><%= player.rushing_attempts %></td>
+          <td><%= player.rushing_attempts_per_game.round(1) %></td>
+          <td><%= player.rushing_yards %></td>
+          <td><%= player.rushing_avg.round(1) %></td>
+          <td><%= player.rushing_yards_per_game.round(1) %></td>
+          <td><%= player.rushing_touchdowns %></td>
+          <td><%= player.rushing_long %><%= player.rushing_long_touchdown_occurred ? "T" : "" %></td>
+          <td><%= player.rushing_1st_downs %></td>
+          <td><%= player.rushing_1st_down_percentage.round(1) %></td>
+          <td><%= player.rushing_20_yards_plus_plays %></td>
+          <td><%= player.rushing_40_yards_plus_plays %></td>
+          <td><%= player.fumbles %></td>
+
+          <td><%= link_to 'Show', player %></td>
+          <td><%= link_to 'Edit', edit_player_path(player) %></td>
+          <td><%= link_to 'Destroy', player, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<div class="row">
+  <%= link_to 'New Player', new_player_path %>
+</div>
 
 </div>
