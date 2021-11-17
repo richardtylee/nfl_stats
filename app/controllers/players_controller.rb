@@ -14,7 +14,7 @@ class PlayersController < ApplicationController
     respond_to do |format|
       format.html
       format.json
-      format.csv { send_data @players.to_csv, filename: "players-#{Date.today}.csv" }
+      format.csv { send_data @players.to_csv, filename: "players.csv" }
     end
   end
 
