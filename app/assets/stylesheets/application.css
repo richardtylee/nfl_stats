@@ -20,3 +20,7 @@
   overflow: hidden;
   display: block;
 }
+
+.navbar-bg {
+  background-color: #1e1f21;
+}
