@@ -28,7 +28,7 @@ In this repo is a sample data file [`rushing.json`](/rushing.json).
 
 I created a Rails 6 app.  There's only one route: http://localhost:3000/players
 
-To save time on the frontend, I'm using Bootstrap 5.
+To save time, I'm using [Bootstrap 5](https://getbootstrap.com/docs/5.0/getting-started/introduction/) and [SQLite](https://www.sqlite.org/index.html).
 
 #### 1. Create a webpage which displays a table with the contents of [`rushing.json`](/rushing.json)
 
@@ -66,3 +66,30 @@ To handle potentially larger sets of data, I implemented pagination using [will_
 
 
 ## Installation and running this solution
+
+### Setup
+
+Install Ruby dependencies:
+```
+bundle install
+```
+
+Install JavaScript dependencies:
+```
+yarn install
+```
+
+Database setup (including data seeding):
+```
+rails db:reset
+```
+
+### Start the Server
+
+```
+rails s
+```
+
+Then go to: http://localhost:3000/players
+
+If everything is working, you should see a table with player stats.
