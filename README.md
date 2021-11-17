@@ -49,6 +49,8 @@ Each column is sorted in descending, with category leaders displayed at the top.
 
 To filter by player name, the user can type in a string in the Search field.  This is driven by the `name_search` parmater.
 
+![alt text](/screenshots/name-search.png)
+
 Example:
 * http://localhost:3000/players?name_search=Aaron
 
