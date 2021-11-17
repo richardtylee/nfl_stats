@@ -20,7 +20,7 @@ We have sets of records representing football players' rushing statistics. All r
 * `40+` (Rushing 40+ Yards Each)
 * `FUM` (Rushing Fumbles)
 
-In this repo is a sample data file [`rushing.json`](/rushing.json).
+In this repo is a sample data file [`rushing.json`](/db/rushing.json).
 
 ## Requirements
 
@@ -30,9 +30,9 @@ I created a Rails 6 app.  There's only one route: http://localhost:3000/players
 
 To save time, I'm using [Bootstrap 5](https://getbootstrap.com/docs/5.0/getting-started/introduction/) and [SQLite](https://www.sqlite.org/index.html).
 
-#### 1. Create a webpage which displays a table with the contents of [`rushing.json`](/rushing.json)
+#### 1. Create a webpage which displays a table with the contents of [`rushing.json`](/db/rushing.json)
 
-The contents of the rushing.json can be found on the main players page: http://localhost:3000/players
+The contents of the [`rushing.json`](/db/rushing.json)can be found on the main players page: http://localhost:3000/players
 
 #### 2. The user should be able to sort the players by _Total Rushing Yards_, _Longest Rush_ and _Total Rushing Touchdowns_
 
